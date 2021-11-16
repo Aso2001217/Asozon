@@ -19,6 +19,10 @@ Price:int(10)
 Stock:int(10)
 Company:text(30)
 Overview:text(500)
+ImgPath:varchar(30)
+---default: "../ImageProducts/defaultImg"
+Rank:int(10)
+---default: "0"
 }
 
 entity "WishList"{
@@ -28,6 +32,12 @@ PID:int(10)[FK]
 }
 
 entity "Cart"{
++ MID:int(10)[PK]
+==
+PID:int(10)[FK]
+}
+
+entity "BuyLater"{
 + MID:int(10)[PK]
 ==
 PID:int(10)[FK]
@@ -47,11 +57,19 @@ entity "Category"{
 * CatName:varchar(50)
 }
 
+entity "CampSite"{
++ CSID:int(10)[PK]
+==
+CSIntro:varchar(300)
+}
 
 Products --|{ Cart
 Products --|{ WishList
 Products --|{ History
+Products --|{ BuyLater
 Category --|{ Products
+Members--|{ History
+Members||--||BuyLater
 Members||--||WishList
 Members||--||Cart
 @enduml
