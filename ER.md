@@ -63,6 +63,13 @@ entity "CampSite"{
 CSIntro:varchar(300)
 }
 
+entity "FAQ"{
++ FAQID:int(10)
+==
+Questions:varchar(500)
+Answers:varchar(800)
+}
+
 Products --|{ Cart
 Products --|{ WishList
 Products --|{ History
