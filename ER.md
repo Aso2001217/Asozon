@@ -20,9 +20,7 @@ Stock:int(10)
 Company:text(30)
 Overview:text(500)
 ImgPath:varchar(30)
----default: "../ImageProducts/defaultImg"
-Rank:int(10)
----default: "0"
+---default: "../ImageProductsImg/defaultImg"
 }
 
 entity "WishList"{
