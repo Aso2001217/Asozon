@@ -41,12 +41,16 @@ entity "BuyLater"{
 PID:int(10)[FK]
 }
 
-entity "History"{
-+ HID:int(10)[PK]
+entity "OrderList"{
++ OrderID:int(10)[PK]
 ==
-Hdate:date(8)
-PID:int(10)[FK]
 MID:int(10)[FK]
+Members.Address:varchar(50)[FK]
+Members.Tel:int(11)[FK]
+PID:int(10)[FK]
+Num:int(10)
+Products.Price:int(10)[FK]
+Date:date(10)
 }
 
 entity "Category"{
@@ -70,10 +74,10 @@ Answers:varchar(800)
 
 Products --|{ Cart
 Products --|{ WishList
-Products --|{ History
+Products --|{ OrderList
 Products --|{ BuyLater
 Category --|{ Products
-Members--|{ History
+Members--|{ OrderList
 Members||--||BuyLater
 Members||--||WishList
 Members||--||Cart
